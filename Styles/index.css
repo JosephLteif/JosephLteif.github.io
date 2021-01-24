@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  color: white;
+  background-color: rgb(184, 184, 184);
+}
+
+/* ScrollBar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* End ScrollBar */
+
+/* Side Bar */
+#sidebar {
+  border-color: rgb(207, 207, 207);
+  border-right-style: solid;
+  background-color: white;
+  border-width: 2px;
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  text-align: center;
+}
+
+.rounded-circle {
+  margin-top: 40px;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 1px solid rgb(207, 207, 207);
+  width: 60%;
+  margin-left: 20%;
+}
+
+#hr {
+  margin-top: 60px;
+}
+
+#sidebar section + section {
+  margin-top: 30px;
+}
+
+#NavigatinSection {
+  display: grid;
+}
+
+#NavigatinSection a {
+  color: gray;
+}
+
+.NavigatinSection a:hover {
+  text-decoration-style: dotted;
+  text-decoration-color: black;
+  transition: 1s;
+}
+
+#NavigatinSection a + a {
+  margin-top: 10px;
+}
+
+#ContactSection {
+  display: grid;
+  margin-top: 20px !important;
+}
+
+#ContactSection a {
+  color: gray;
+  font-size: 13px;
+  margin-top: 0px !important;
+}
+
+#ContactSection h6 {
+  color: gray;
+  font-size: 13px;
+}
+
+#ContactSection a:hover {
+  text-decoration: solid;
+  text-decoration-color: black;
+  transition: 0.5s;
+}
+
+#ContactSection h6 + h6 {
+  margin-top: 10px;
+}
+
+/* End Side Bar */
+
+/*Side*/
+#side {
+  margin-left: 250px;
+}
+
+#side #Home {
+  display: flex;
+  background-color: rgb(247, 247, 247);
+}
+
+#PersonalInfo {
+  margin-top: 110px;
+  margin-left: 50px;
+}
+
+#PersonalInfo h6 {
+  color: gray !important;
+}
+
+#PersonalInfo p {
+  margin-top: 5%;
+}
+
+#Home img {
+  float: right;
+  width: 300px;
+  margin-right: 25%;
+}
+
+#Menubtn {
+  position: absolute;
+  visibility: hidden;
+  z-index: 999;
+}
+
+/*End Side*/
+
+@media screen and (max-width: 1100px) {
+  #sidebar {
+    width: 0px;
+    visibility: collapse;
+  }
+
+  #side {
+    margin-left: 0px;
+  }
+
+  #Menubtn {
+    position: absolute;
+    visibility: visible;
+    z-index: 999;
+  }
+}

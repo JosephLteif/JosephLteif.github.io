@@ -1,3 +1,31 @@
-$("#Home").appear(function(){
-    $("Homebtn").css(  "text-decoration: solid","text-decoration-color: black","transition: 0.5s")
-})
+// Wrap every letter in a span
+$(document).ready(function () {
+    $(document).scroll(function () {
+      if ($("#Home").is(":visible")) {
+        $("#Homebtn").css("text-decoration-style", "solid");
+      }
+    });
+
+    $(".ml9 .letters").each(function (index) {
+      var characters = $(this).text().split("");
+
+      $this = $(this);
+      $this.empty();
+      $.each(characters, function (i, el) {
+        $this.append('<span class="letter bounce">' + el + "</span");
+        $this.animate({
+          opacity: "1",
+        });
+      });
+    });
+
+    $(".bounce").mouseover(function () {
+      var j = 35;
+      for (var i = 1; i <= 3; i++) {
+        $(this).animate({ bottom: j }, "slow");
+        $(this).animate({ bottom: 0 }, "slow");
+        j -= 10;
+      }
+    });
+ 
+  });

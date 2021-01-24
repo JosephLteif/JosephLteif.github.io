@@ -52,6 +52,16 @@ body {
 
 .rounded-circle {
   margin-top: 40px;
+  transition: 0.5s;
+}
+
+.rounded-circle:hover {
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -moz-transform: rotate(360deg); /* Firefox */
+  -webkit-transform: rotate(360deg); /* Safari and Chrome */
+  -o-transform: rotate(360deg); /* Opera */
+  transition: 0.5s;
 }
 
 /* Solid border */
@@ -78,7 +88,7 @@ hr.solid {
 }
 
 .NavigatinSection a:hover {
-  text-decoration-style: dotted;
+  text-decoration-style: solid;
   text-decoration-color: black;
   transition: 1s;
 }
@@ -117,7 +127,8 @@ hr.solid {
 
 /*Side*/
 #side {
-  margin-left: 250px;
+  margin-left: 260px;
+  width: screen.960px;
 }
 
 #side #Home {
@@ -130,8 +141,25 @@ hr.solid {
   margin-left: 50px;
 }
 
+.letters {
+  opacity: 0;
+  transition: 0.2s;
+  scale: 0;
+}
+
+.bounce {
+  height: 50px;
+  width: 50px;
+  margin-top: 50px;
+  position: relative;
+}
+
 #PersonalInfo h6 {
   color: gray !important;
+}
+
+#PersonalInfo #name {
+  display: flex;
 }
 
 #PersonalInfo p {
@@ -150,7 +178,18 @@ hr.solid {
   z-index: 999;
 }
 
+#About h2{
+  text-decoration: underline;
+}
+
 /*End Side*/
+
+/* About Section */
+#About h2{
+  text-align: center;
+  margin-top: 20px;
+}
+/* End About Section */
 
 @media screen and (max-width: 1100px) {
   #sidebar {

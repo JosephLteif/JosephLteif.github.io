@@ -178,18 +178,59 @@ hr.solid {
   z-index: 999;
 }
 
-#About h2{
-  text-decoration: underline;
+.Title {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration-style: none;
 }
 
 /*End Side*/
 
-/* About Section */
-#About h2{
-  text-align: center;
-  margin-top: 20px;
+/* Experience Section  */
+#Experience{
+  margin-left: 50px;
 }
-/* End About Section */
+/* #Experience .Experience-Block+.Experience-Block{
+  margin-top: 3rem;
+} */
+
+.Experience-Block {
+  display: flex;
+  border-color: black;
+  width: fit-content;
+  align-content: center;
+  border-left: 2px solid;
+  padding-right: 0;
+}
+
+.Experience-Block-Divider{
+  border-color: black;
+  border-left: 2px solid;
+  height: 3rem;
+}
+
+.Experience-Block-Image{
+  position: absolute;
+  margin-left: -25px;
+}
+
+.Experience-Block-Info {
+  display: grid;
+  margin-left: 80px;
+}
+
+.Experience-Block-Info p+p{
+margin-top: 0px;
+}
+
+#startupLogo{
+ border-radius: 50px;
+}
+/* End Experience Section  */
+
+/* Certificates Section */
+
+/* End Certificates Section */
 
 @media screen and (max-width: 1100px) {
   #sidebar {

@@ -22,8 +22,8 @@ $(document).ready(function () {
     $(".bounce").mouseover(function () {
       var j = 35;
       for (var i = 1; i <= 3; i++) {
-        $(this).animate({ bottom: j }, "slow");
-        $(this).animate({ bottom: 0 }, "slow");
+        $(this).animate({ bottom: j }, "fast");
+        $(this).animate({ bottom: 0 }, "fast");
         j -= 10;
       }
     });

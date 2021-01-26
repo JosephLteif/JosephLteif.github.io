@@ -12,7 +12,7 @@
   <!-- End Meta -->
 
   <!-- Link  -->
-  <link rel="stylesheet" href="../Styles/index.css" />
+  <link rel="stylesheet" href="Styles/index.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <!-- End Link  -->
@@ -24,7 +24,7 @@
   <!-- Sidebar -->
   <section id="sidebar">
     <section>
-      <img id="ProfileImage" class="rounded-circle" src="../Assets/Image1.jpeg" alt="" />
+      <img id="ProfileImage" class="rounded-circle" src="Assets/Image1.jpeg" alt="" />
     </section>
 
     <hr id="hr" class="solid" />
@@ -60,7 +60,24 @@
 
   <!-- Main  -->
   <section id="side">
-    <span id="Menubtn">X</span>
+    <!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#Home">Home</a>
+    <a href="#Experience">Experience</a>
+    <a href="#Certificates-Container">Certificates</a>
+    <a href="#Contact">Contact</a>
+  </div>
+
+</div>
+    <span id="Menubtn"><div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></span>
 
     <!-- Home Section  -->
     <section id="Home" class="row">
@@ -80,8 +97,8 @@
         </p>
       </div>
 
-      <div class="col">
-        <img src="../Assets/WhatsApp Image 2020-04-23 at 9.33.52 PM.jpeg" alt="" />
+      <div id="ImageDiv" class="col Justify-content-center">
+        <img src="Assets/WhatsApp Image 2020-04-23 at 9.33.52 PM.jpeg" alt="" />
       </div>
     </section>
     <!-- End Home Section  -->
@@ -93,7 +110,7 @@
       <div class="Experience-Block">
         <div class="Experience-Block-Image">
           <picture>
-            <img src="../Assets/Logo---Copy.jpg" alt="" srcset="" width="48px" />
+            <img src="Assets/Logo---Copy.jpg" alt="" srcset="" width="48px" />
           </picture>
         </div>
         <div class="Experience-Block-Info">
@@ -140,7 +157,7 @@
       <div class="Experience-Block">
         <div class="Experience-Block-Image">
           <picture>
-            <img id="startupLogo" src="../Assets/80s-Logo.jpg" alt="" srcset="" width="48px" />
+            <img id="startupLogo" src="Assets/80s-Logo.jpg" alt="" srcset="" width="48px" />
           </picture>
         </div>
         <div class="Experience-Block-Info">
@@ -245,9 +262,9 @@
             </div>
             <div class="desc">
               <picture>
-                <img src="../Assets/GitHub-Mark-64px.png" alt="" width="24px">
+                <img src="Assets/GitHub-Mark-64px.png" alt="" width="24px">
               </picture>
-              <a href="https://github.com/">© 2021 GitHub, Inc.</a>
+              © 2021 GitHub, Inc.
             </div>
         </div>
           </div>
@@ -266,7 +283,7 @@
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-  <script src="../Scripts/index.js"></script>
+  <script src="Scripts/index.js"></script>
   <!-- End Scripts -->
 </body>
 

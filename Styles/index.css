@@ -38,7 +38,7 @@ body {
 
 /* End ScrollBar */
 
-.filler{
+.filler {
   height: 20px;
 }
 
@@ -127,6 +127,63 @@ hr.solid {
   margin-top: 10px;
 }
 
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
 /* End Side Bar */
 
 /*Side*/
@@ -174,7 +231,6 @@ hr.solid {
 #Home img {
   float: right;
   width: 300px;
-  margin-right: 25%;
 }
 
 #Menubtn {
@@ -185,19 +241,21 @@ hr.solid {
 
 .Title {
   text-align: center;
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
   text-decoration-style: none;
 }
 
 /*End Side*/
 
 /* Experience Section  */
-#Experience{
+#Experience {
   margin-left: 50px;
 }
-/* #Experience .Experience-Block+.Experience-Block{
-  margin-top: 3rem;
-} */
+
+#Experience .Title + .Experience-Block{
+  margin-top: 15px;
+}
 
 .Experience-Block {
   display: flex;
@@ -208,13 +266,13 @@ hr.solid {
   padding-right: 0;
 }
 
-.Experience-Block-Divider{
+.Experience-Block-Divider {
   border-color: black;
   border-left: 2px solid;
   height: 3rem;
 }
 
-.Experience-Block-Image{
+.Experience-Block-Image {
   position: absolute;
   margin-left: -25px;
 }
@@ -224,124 +282,124 @@ hr.solid {
   margin-left: 80px;
 }
 
-.Experience-Block-Info p+p{
-margin-top: 0px;
+.Experience-Block-Info p + p {
+  margin-top: 0px;
 }
 
-#startupLogo{
- border-radius: 50px;
+#startupLogo {
+  border-radius: 50px;
 }
 /* End Experience Section  */
 
 /* Certificates Section */
-#Certificates-Container{
+#Certificates-Container {
   align-items: center;
 }
 
 .Certificates {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	display: flex;
-	max-width: 100%;
-	margin: 20px;
-	overflow: hidden;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
   width: 700px;
 }
 
-#Certificates-Container .row{
-  margin-left:110px !important;
+#Certificates-Container .row {
+  margin-left: 110px !important;
   margin-top: 20px !important;
 }
 
 .Certificates h6 {
-	opacity: 0.6;
-	margin: 0;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .Certificates h2 {
-	letter-spacing: 1px;
-	margin: 10px 0;
+  letter-spacing: 1px;
+  margin: 10px 0;
 }
 
 .Certificates-preview {
-	background-color: #2A265F;
-	color: #fff;
-	padding: 30px;
-	max-width: 250px;
+  background-color: #2a265f;
+  color: #fff;
+  padding: 30px;
+  max-width: 250px;
 }
 
-.Certificates-preview h3{
+.Certificates-preview h3 {
   margin-top: 10%;
 }
 
 .Certificates-preview a {
-	color: #fff;
-	display: inline-block;
-	font-size: 12px;
-	opacity: 0.6;
-	margin-top: 30px;
-	text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
 }
 
 .Certificates-info {
-	padding: 30px;
-	position: relative;
-	width: 100%;
+  padding: 30px;
+  position: relative;
+  width: 100%;
 }
 
 .progress-container {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	text-align: right;
-	width: 150px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+  width: 150px;
 }
 
 .progress {
-	background-color: #ddd;
-	border-radius: 3px;
-	height: 5px !important;
-	width: 100%;
+  background-color: #ddd;
+  border-radius: 3px;
+  height: 5px !important;
+  width: 100%;
 }
 
 .progress::after {
-	border-radius: 3px;
-	background-color: #2A265F;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 5px;
-	width: 100%;
+  border-radius: 3px;
+  background-color: #2a265f;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
 }
 
 .progress-text {
-	font-size: 10px;
-	opacity: 0.6;
-	letter-spacing: 1px;
+  font-size: 10px;
+  opacity: 0.6;
+  letter-spacing: 1px;
 }
 
 .btn {
-	background-color: #2A265F;
-	border: 0;
-	border-radius: 50px;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	color: #fff;
-	font-size: 16px;
-	padding: 12px 25px;
-	position: absolute;
-	bottom: 30px;
-	right: 30px;
-	letter-spacing: 1px;
+  background-color: #2a265f;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
 }
 /* End Certificates Section */
 
 /* Contact Section  */
 
-#LinkedInCard{
+#LinkedInCard {
   margin-left: 150px;
 }
 
@@ -355,7 +413,7 @@ margin-top: 0px;
   flex-direction: column;
   overflow: hidden;
   border-radius: 2rem;
-  box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+  box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
 }
 .card .banner {
   background-image: url("../Assets/GitHubBanner.jpg");
@@ -372,7 +430,7 @@ margin-top: 0px;
   background-color: #fff;
   width: 108px;
   height: 108px;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   transform: translateY(50%);
   transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -435,7 +493,7 @@ margin-top: 0px;
   padding: 0 2rem 0;
 }
 .card .actions {
-  padding: 0 2rem 1.2rem;
+  padding: 0 2rem 0.2rem;
   display: flex;
   flex-direction: column;
   order: 99;
@@ -480,14 +538,15 @@ margin-top: 0px;
   /* font: inherit; */
   font-weight: bold;
   font-size: 12px;
-  background-color:#333;
+  background-color: #333;
   width: 100.73px;
   height: 31px;
   border: none;
   outline: none;
   box-sizing: border-box;
   border-radius: 1.5rem;
-  transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: background-color 100ms ease-in-out,
+    transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 .card .actions .follow-btn button:hover {
   background-color: #4078c0;
@@ -505,26 +564,25 @@ margin-top: 0px;
   font-size: 15px;
 }
 
-.card .desc a{
+.card .desc a {
   color: black;
   text-decoration: none;
 }
 
-#GitHubFollowbtn{
+#GitHubFollowbtn {
   color: white;
   margin-left: 25%;
 }
 
-#Contact .row .CardDiv+.CardDiv{
-  margin-left:50px;
+#Contact .row .CardDiv + .CardDiv {
+  margin-left: 50px;
 }
 
-#Contact .row{
-  margin-top:20px;
+#Contact .row {
+  margin-top: 20px;
 }
 
 /* End Contact Section  */
-
 
 @media screen and (max-width: 1100px) {
   #sidebar {
@@ -537,8 +595,80 @@ margin-top: 0px;
   }
 
   #Menubtn {
-    position: absolute;
+    position: fixed;
     visibility: visible;
     z-index: 999;
+    margin-left: 15px;
+  }
+  #Menubtn div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+}
+
+@media screen and (max-width: 810px) {
+  #Home {
+    text-align: center;
+  }
+  #Home #ImageDiv {
+    margin: auto;
+    order: 1;
+  }
+
+  #PersonalInfo {
+    margin-top: 40px !important;
+    order: 5;
+  }
+  .Certificates {
+    display: grid;
+    width: fit-content;
+  }
+  .Certificates-preview {
+    width: 100%;
+    max-width: 305px !important;
+  }
+  .progress-container {
+    position: sticky;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #PersonalInfo {
+    margin-left: 10px;
+  }
+  #Certificates-Container .row {
+    margin-left: 0px !important;
+  }
+  .Title {
+    margin-top: 40px !important;
   }
 }

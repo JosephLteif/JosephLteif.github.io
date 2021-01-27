@@ -101,29 +101,29 @@ hr.solid {
   margin-top: 10px;
 }
 
-#ContactSection {
+#SocialMediaSection {
   display: grid;
   margin-top: 20px !important;
 }
 
-#ContactSection a {
+#SocialMediaSection a {
   color: gray;
   font-size: 13px;
   margin-top: 0px !important;
 }
 
-#ContactSection h6 {
+#SocialMediaSection h6 {
   color: gray;
   font-size: 13px;
 }
 
-#ContactSection a:hover {
+#SocialMediaSection a:hover {
   text-decoration: solid;
   text-decoration-color: black;
   transition: 0.5s;
 }
 
-#ContactSection h6 + h6 {
+#SocialMediaSection h6 + h6 {
   margin-top: 10px;
 }
 
@@ -402,7 +402,7 @@ hr.solid {
 }
 /* End Certificates Section */
 
-/* Contact Section  */
+/* SocialMedia Section  */
 
 #LinkedInCard {
   margin-left: 80px;
@@ -583,16 +583,17 @@ hr.solid {
   margin-left: 25%;
 }
 
-#Contact .row .CardDiv + .CardDiv {
+#SocialMedia .row .CardDiv + .CardDiv {
   margin-left: 80px;
 }
 
-#Contact .row {
+#SocialMedia .row {
   margin-top: 20px;
   width: fit-content;
+  margin-left: 55px;
 }
 
-/* End Contact Section  */
+/* End SocialMedia Section  */
 
 @media screen and (max-width: 1100px) {
   #sidebar {
@@ -672,7 +673,7 @@ hr.solid {
 }
 
 @media screen and (max-width: 700px) {
-  #Contact .row .CardDiv + .CardDiv {
+  #SocialMedia .row .CardDiv + .CardDiv {
     margin-left: 80px;
     margin-top: 20px;
   }
@@ -680,7 +681,7 @@ hr.solid {
     margin-left: 10px;
   }
   #Certificates-Container .row {
-    margin-left: 40px !important;
+    margin-left: 95px !important;
   }
   .Title {
     margin-top: 40px !important;

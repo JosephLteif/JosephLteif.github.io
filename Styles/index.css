@@ -296,7 +296,7 @@ hr.solid {
 /* End Experience Section  */
 
 /* Certificates Section */
-#Certificates-Container {
+.Certificates-Container {
   align-items: center;
 }
 
@@ -311,10 +311,11 @@ hr.solid {
   width: 700px;
 }
 
-#Certificates-Container .row {
-  margin-left: 100px !important;
+.Certificates-Container .row {
+  margin-left: auto !important;
+  margin-right: auto !important;
   margin-top: 20px !important;
-  width: fit-content;
+  width: min-content;
 }
 
 .Certificates h6 {
@@ -590,8 +591,10 @@ hr.solid {
 #SocialMedia .row {
   margin-top: 20px;
   width: fit-content;
-  margin-left: 55px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 /* End SocialMedia Section  */
 
@@ -680,9 +683,7 @@ hr.solid {
   #PersonalInfo {
     margin-left: 10px;
   }
-  #Certificates-Container .row {
-    margin-left: 95px !important;
-  }
+
   .Title {
     margin-top: 40px !important;
   }

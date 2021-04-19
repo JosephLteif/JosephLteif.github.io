@@ -323,6 +323,7 @@ hr.solid {
   margin: 0;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .Certificates h2 {
@@ -339,6 +340,7 @@ hr.solid {
 
 .Certificates-preview h3 {
   margin-top: 10%;
+  color: #fff;
 }
 
 .Certificates-preview a {
@@ -430,7 +432,7 @@ hr.solid {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 5.3rem;
+  /* height: 5.3rem; */
   display: flex;
   align-items: flex-end;
   justify-content: center;

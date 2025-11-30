@@ -1,0 +1,40 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Allows the main content to grow and take available space */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center the content */
+  padding: 2rem;
+  width: 100%; /* Ensure it takes full width within its max-width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+section {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  section {
+    padding: 1rem 0;
+  }
+}
+

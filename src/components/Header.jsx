@@ -22,7 +22,6 @@ function Header() {
           <div className={`hamburger ${isNavOpen ? 'open' : ''}`}></div>
         </button>
         <ul id="primary-navigation" className={`nav-links ${isNavOpen ? 'expanded' : ''}`}>
-          <li onClick={() => setIsNavOpen(false)}><a href="#about">About</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#skills">Skills</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>

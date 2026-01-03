@@ -51,11 +51,11 @@ function Terminal() {
         { type: 'output', text: ["Welcome to the interactive portfolio terminal.", "Type 'help' to get started."] }
     ]);
     const [input, setInput] = useState('');
-    const bottomRef = useRef(null);
+    const bodyRef = useRef(null);
 
     useEffect(() => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        if (bodyRef.current) {
+            bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
         }
     }, [history]);
 
@@ -94,7 +94,11 @@ function Terminal() {
                         <div className="terminal-button green"></div>
                         <span className="terminal-title">user@portfolio:~</span>
                     </div>
-                    <div className="terminal-body" onClick={() => document.getElementById('terminal-input').focus()}>
+                    <div
+                        className="terminal-body"
+                        ref={bodyRef}
+                        onClick={() => document.getElementById('terminal-input').focus()}
+                    >
                         {history.map((line, index) => (
                             <div key={index} className={`terminal-line ${line.type}`}>
                                 {line.type === 'input' && <span className="prompt">user@portfolio:~$ </span>}
@@ -116,7 +120,6 @@ function Terminal() {
                                 autoComplete="off"
                                 spellCheck="false"
                             />
-                            <div ref={bottomRef} />
                         </div>
                     </div>
                 </div>

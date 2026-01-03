@@ -2,6 +2,7 @@
   padding: 80px 20px;
   background-color: var(--background-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .experience-content {
@@ -20,7 +21,7 @@
 .experience-intro {
   text-align: center;
   font-size: 1.1rem;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -28,27 +29,132 @@
   opacity: 0.9;
 }
 
-.experience-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.experience-card {
-  background-color: white;
-  /* Card background */
-  border-radius: 12px;
+/* The vertical line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  /* Central line thickness */
+  background-color: #e9ecef;
+  /* Light gray line */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+/* Timeline Item - The positioning wrapper */
+.timeline-item {
+  padding: 10px 70px;
+  /* Ample space for the connector line */
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Left side items */
+.timeline-item.left {
+  left: 0;
+}
+
+/* Right side items */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* The Central Node (Dot) */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  /* Centered on the main line */
+  background-color: var(--background-color);
+  border: 4px solid var(--primary-color);
+  top: 35px;
+  /* Aligns with the top of the card roughly */
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px white;
+  /* Whitespace ring around dot */
+}
+
+/* Dot position for right items */
+.timeline-item.right::after {
+  left: -8px;
+}
+
+/* Hover effect for Dot */
+.timeline-item:hover::after {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 6px rgba(184, 134, 11, 0.2);
+  transform: scale(1.1);
+}
+
+/* The Branch (Connector Line) */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  /* Slightly thicker for visibility */
+  width: 70px;
+  /* Spans the entire padding area to the content */
+  top: 43px;
+  /* Center-aligned with the dot (35px + ~8px center) */
+  background-color: var(--primary-color);
+  z-index: 5;
+  opacity: 1;
+  /* Fully visible */
+  transition: width 0.3s ease;
+}
+
+/* Connector for Left Items */
+.timeline-item.left::before {
+  right: 0;
+  /* Starts from the center line */
+}
+
+/* Connector for Right Items */
+.timeline-item.right::before {
+  left: 0;
+  /* Starts from the center line */
+}
+
+
+/* Timeline Content - The actual card */
+.timeline-content {
   padding: 30px;
+  background-color: white;
+  /* Explicit white background */
+  position: relative;
+  border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 6;
+  /* Sit above the connector slightly if overlapped */
 }
 
-.experience-card:hover {
+/* Hover effects */
+.timeline-item:hover .timeline-content {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(184, 134, 11, 0.3);
 }
 
+/* Content Styling */
 .experience-header {
   display: flex;
   justify-content: space-between;
@@ -56,6 +162,8 @@
   margin-bottom: 20px;
   flex-wrap: wrap;
   gap: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
 }
 
 .experience-main-info h3 {
@@ -81,7 +189,6 @@
   font-weight: 700;
   color: var(--primary-color);
   font-size: 1.1rem;
-  display: block;
 }
 
 .experience-location {
@@ -111,9 +218,7 @@
 
 .tech-pill {
   background-color: rgba(184, 134, 11, 0.1);
-  /* Primary color with low opacity */
   color: var(--primary-color);
-  /* Primary Color */
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -121,15 +226,43 @@
   border: 1px solid rgba(184, 134, 11, 0.2);
 }
 
-@media (max-width: 768px) {
-  .experience-header {
-    flex-direction: column;
-    align-items: flex-start;
+/* Media queries - Responsive Design */
+@media screen and (max-width: 768px) {
+
+  /* Move main line to the left */
+  .timeline-container::after {
+    left: 20px;
   }
 
-  .experience-meta {
-    align-items: flex-start;
-    text-align: left;
-    margin-top: 10px;
+  /* Full width container items */
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    /* Space for line + connector */
+    padding-right: 0;
+  }
+
+  /* Reset left/right positions */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  /* Move Dots to the left line */
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: 12px;
+    /* Center on line at 20px */
+    right: auto;
+  }
+
+  /* Connector Lines from left to content */
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 20px;
+    /* Start at line */
+    width: 50px;
+    /* Extend to content start (70 padding - 20 line) */
+    right: auto;
   }
 }

@@ -72,30 +72,32 @@ function Experience() {
       <div className="experience-content">
         <h2 className="section-title">Professional Experience</h2>
         <p className="experience-intro">A timeline of my professional journey covering 2.5+ years of post-graduate experience:</p>
-        <div className="experience-grid">
-          {experiences.map(exp => (
-            <div key={exp.id} className="experience-card">
-              <div className="experience-header">
-                <div className="experience-main-info">
-                  <h3>{exp.company}</h3>
-                  <h4 className="experience-role">{exp.role}</h4>
+        <div className="timeline-container">
+          {experiences.map((exp, index) => (
+            <div key={exp.id} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+              <div className="timeline-content">
+                <div className="experience-header">
+                  <div className="experience-main-info">
+                    <h3>{exp.company}</h3>
+                    <h4 className="experience-role">{exp.role}</h4>
+                  </div>
+                  <div className="experience-meta">
+                    <span className="experience-date">{exp.date}</span>
+                    <span className="experience-location">{exp.location} ({exp.type})</span>
+                  </div>
                 </div>
-                <div className="experience-meta">
-                  <span className="experience-date">{exp.date}</span>
-                  <span className="experience-location">{exp.location} ({exp.type})</span>
+
+                <ul className="experience-description-list">
+                  {exp.description.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+
+                <div className="experience-tech">
+                  {exp.technologies.map(tech => (
+                    <span key={tech} className="tech-pill">{tech}</span>
+                  ))}
                 </div>
-              </div>
-
-              <ul className="experience-description-list">
-                {exp.description.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-
-              <div className="experience-tech">
-                {exp.technologies.map(tech => (
-                  <span key={tech} className="tech-pill">{tech}</span>
-                ))}
               </div>
             </div>
           ))}

@@ -32,7 +32,8 @@
 /* Timeline Container */
 .timeline-container {
   position: relative;
-  max-width: 1000px;
+  /* Increased from 1000px to 1200px to give more width */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
 }
@@ -54,8 +55,9 @@
 
 /* Timeline Item - The positioning wrapper */
 .timeline-item {
-  padding: 10px 70px;
-  /* Ample space for the connector line */
+  /* Reduced padding from 70px to 40px to give more space for content */
+  padding: 10px 40px;
+  /* Space for the connector line */
   position: relative;
   background-color: inherit;
   width: 50%;
@@ -109,7 +111,8 @@
   position: absolute;
   height: 3px;
   /* Slightly thicker for visibility */
-  width: 70px;
+  /* Reduced width from 70px to 40px */
+  width: 40px;
   /* Spans the entire padding area to the content */
   top: 43px;
   /* Center-aligned with the dot (35px + ~8px center) */
@@ -237,7 +240,7 @@
   /* Full width container items */
   .timeline-item {
     width: 100%;
-    padding-left: 70px;
+    padding-left: 50px;
     /* Space for line + connector */
     padding-right: 0;
   }
@@ -261,8 +264,8 @@
   .timeline-item.right::before {
     left: 20px;
     /* Start at line */
-    width: 50px;
-    /* Extend to content start (70 padding - 20 line) */
+    /* Extend to content start (40 padding - 20 line = 20px width? No, line is at 20px. Content starts at 50px. Connector needs to go from 20px to 50px = 30px width) */
+    width: 30px;
     right: auto;
   }
 }

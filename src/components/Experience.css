@@ -1,0 +1,271 @@
+.experience {
+  padding: 40px 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.experience-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.experience-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  /* Increased from 1000px to 1200px to give more width */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* The vertical line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  /* Central line thickness */
+  background-color: #e9ecef;
+  /* Light gray line */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+/* Timeline Item - The positioning wrapper */
+.timeline-item {
+  /* Reduced padding from 70px to 40px to give more space for content */
+  padding: 10px 40px;
+  /* Space for the connector line */
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Left side items */
+.timeline-item.left {
+  left: 0;
+}
+
+/* Right side items */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* The Central Node (Dot) */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  /* Centered on the main line */
+  background-color: var(--background-color);
+  border: 4px solid var(--primary-color);
+  top: 35px;
+  /* Aligns with the top of the card roughly */
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px white;
+  /* Whitespace ring around dot */
+}
+
+/* Dot position for right items */
+.timeline-item.right::after {
+  left: -8px;
+}
+
+/* Hover effect for Dot */
+.timeline-item:hover::after {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 6px rgba(184, 134, 11, 0.2);
+  transform: scale(1.1);
+}
+
+/* The Branch (Connector Line) */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  /* Slightly thicker for visibility */
+  /* Reduced width from 70px to 40px */
+  width: 40px;
+  /* Spans the entire padding area to the content */
+  top: 43px;
+  /* Center-aligned with the dot (35px + ~8px center) */
+  background-color: var(--primary-color);
+  z-index: 5;
+  opacity: 1;
+  /* Fully visible */
+  transition: width 0.3s ease;
+}
+
+/* Connector for Left Items */
+.timeline-item.left::before {
+  right: 0;
+  /* Starts from the center line */
+}
+
+/* Connector for Right Items */
+.timeline-item.right::before {
+  left: 0;
+  /* Starts from the center line */
+}
+
+
+/* Timeline Content - The actual card */
+.timeline-content {
+  padding: 30px;
+  background-color: white;
+  /* Explicit white background */
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 6;
+  /* Sit above the connector slightly if overlapped */
+}
+
+/* Hover effects */
+.timeline-item:hover .timeline-content {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(184, 134, 11, 0.3);
+}
+
+/* Content Styling */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.experience-main-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.experience-role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.experience-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.experience-date {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.experience-location {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.experience-description-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.experience-description-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: var(--text-color);
+  list-style-type: disc;
+}
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tech-pill {
+  background-color: rgba(184, 134, 11, 0.1);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+/* Media queries - Responsive Design */
+@media screen and (max-width: 768px) {
+
+  /* Move main line to the left */
+  .timeline-container::after {
+    left: 20px;
+  }
+
+  /* Full width container items */
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    /* Space for line + connector */
+    padding-right: 0;
+  }
+
+  /* Reset left/right positions */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  /* Move Dots to the left line */
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: 12px;
+    /* Center on line at 20px */
+    right: auto;
+  }
+
+  /* Connector Lines from left to content */
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 20px;
+    /* Start at line */
+    /* Extend to content start (40 padding - 20 line = 20px width? No, line is at 20px. Content starts at 50px. Connector needs to go from 20px to 50px = 30px width) */
+    width: 30px;
+    right: auto;
+  }
+}

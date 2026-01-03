@@ -1,20 +1,21 @@
 .skills {
   background-color: var(--background-color);
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
 .skills-content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-title {
   font-size: 2.5rem;
   color: var(--text-color);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .section-title::after {
@@ -23,7 +24,7 @@
   left: 50%;
   bottom: -10px;
   transform: translateX(-50%);
-  width: 80px;
+  width: 60px;
   height: 4px;
   background-color: var(--primary-color);
   border-radius: 2px;
@@ -31,55 +32,122 @@
 
 .skills-intro {
   font-size: 1.1rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  max-width: 800px;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
 }
 
 .skill-category {
-  margin-bottom: 2.5rem;
-  background-color: #F8F8F8; /* A slightly lighter background for skill boxes */
-  border-radius: 10px;
+  background-color: #ffffff;
+  border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+  /* Softer, spread out shadow */
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  /* Assuming you have an RGB var, if not use a HEX with opacity or just a light color */
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+/* Fallback if rgb var doesn't exist */
+.category-icon {
+  background-color: aliceblue;
+}
+
 
 .skill-category h3 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-.skill-category p {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  line-height: 1.8;
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
+
+.skill-chip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  color: var(--text-color);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+  border: 1px solid transparent;
+}
+
+.skill-chip:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.soft-skill-chip {
+  background-color: #fff0f0;
+  /* Slight red/warm tint for soft skills if desired, or keep generic */
+}
+
+.soft-skill-chip:hover {
+  background-color: #e63946;
+  /* Example distinct hover color, or just use primary */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .skills {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
   }
 
   .section-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 
   .skill-category {
     padding: 1.5rem;
-  }
-
-  .skill-category h3 {
-    font-size: 1.3rem;
-  }
-
-  .skill-category p {
-    font-size: 1rem;
   }
 }

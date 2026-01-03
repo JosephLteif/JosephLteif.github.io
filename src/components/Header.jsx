@@ -40,7 +40,7 @@ function Header() {
               <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
               <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>
               <li onClick={() => setIsNavOpen(false)}><a href="#volunteering">Volunteering</a></li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#contact">Contact</a></li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#terminal">Terminal</a></li>
             </ul>
           </>,
           document.body
@@ -52,7 +52,7 @@ function Header() {
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#volunteering">Volunteering</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#terminal">Terminal</a></li>
         </ul>
 
       </nav>

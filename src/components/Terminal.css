@@ -1,0 +1,147 @@
+.terminal-section {
+    padding: 6rem 2rem 4rem;
+    /* Increased top padding */
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.terminal-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.terminal-subtitle {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    font-family: 'Fira Code', 'Roboto Mono', monospace;
+    /* Fallback to Roboto Mono if Fira Code isn't loaded, though a standard monospace works too */
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.terminal-button.red {
+    background-color: #ff5f56;
+}
+
+.terminal-button.yellow {
+    background-color: #ffbd2e;
+}
+
+.terminal-button.green {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    margin-left: 10px;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.terminal-body {
+    padding: 20px;
+    height: 400px;
+    /* Fixed height for scroll */
+    overflow-y: auto;
+    color: #d4d4d4;
+    font-size: 0.95rem;
+    cursor: text;
+}
+
+.terminal-line {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    word-break: break-word;
+    /* Prevent long strings from breaking layout */
+}
+
+.terminal-line.output {
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    /* Preserve formatting for commands like 'help' if we align them */
+}
+
+.terminal-line.error {
+    color: #ff5f56;
+}
+
+.prompt {
+    color: #27c93f;
+    /* Green prompt */
+    margin-right: 8px;
+    user-select: none;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #d4d4d4;
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Scrollbar for terminal */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (max-width: 600px) {
+    .terminal-section {
+        padding: 2rem 1rem;
+    }
+
+    .terminal-body {
+        height: 300px;
+        font-size: 0.85rem;
+    }
+}

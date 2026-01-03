@@ -1,0 +1,82 @@
+.volunteering {
+    padding: 80px 20px;
+    /* Distinct background from experience */
+    color: var(--text-color);
+}
+
+.volunteering-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.volunteering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.volunteering-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(184, 134, 11, 0.3);
+}
+
+.volunteering-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 15px;
+}
+
+.volunteering-org {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.volunteering-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.volunteering-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.volunteering-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.volunteering-details li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+.volunteering-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.volunteering-details strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}

@@ -1,0 +1,188 @@
+.werewolf-game {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    /* Subtle separator to distinguish the section slightly without breaking flow */
+    border-top: 1px solid rgba(184, 134, 11, 0.1);
+    border-bottom: 1px solid rgba(184, 134, 11, 0.1);
+}
+
+.werewolf-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.werewolf-text {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.werewolf-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.werewolf-features {
+    margin-bottom: 30px;
+}
+
+.werewolf-features h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.werewolf-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.werewolf-features li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.werewolf-features li::before {
+    content: '✦';
+    /* Star/sparkle for a cleaner look */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.play-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    /* Matching standard button radius */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(184, 134, 11, 0.2);
+    border: 1px solid transparent;
+}
+
+.play-button:hover {
+    background-color: #DAA520;
+    /* GoldenRod */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(184, 134, 11, 0.3);
+}
+
+.werewolf-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+/* Artistic CSS-only Visual - Stylized for the theme */
+.moon-visual {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.moon {
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Create a crescent effect using box-shadow instead of background */
+    box-shadow: inset -20px -20px 0 0 rgba(184, 134, 11, 0.1);
+}
+
+/* Decorative circles to form a geometric/abstract representation */
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px dashed var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rotate 60s linear infinite;
+}
+
+.wolf-silhouette {
+    /* Abstract representation */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 40px solid var(--text-color);
+    z-index: 2;
+}
+
+.wolf-silhouette::after {
+    /* Another geometric shape to add detail */
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 25px solid var(--text-color);
+    opacity: 0.8;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 968px) {
+    .werewolf-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .werewolf-features ul {
+        text-align: left;
+        display: inline-block;
+    }
+}

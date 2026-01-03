@@ -4,12 +4,16 @@
   font-weight: 400;
 
   /* Warm light beige theme */
-  --background-color: #FDF5E6; /* OldLace - light beige */
-  --text-color: #36454F; /* Charcoal - warm dark gray */
-  --primary-color: #B8860B; /* DarkGoldenRod - warm accent */
+  --background-color: #FDF5E6;
+  /* OldLace - light beige */
+  --text-color: #36454F;
+  /* Charcoal - warm dark gray */
+  --primary-color: #B8860B;
+  /* DarkGoldenRod - warm accent */
   --primary-color-rgb: 184, 134, 11;
 
-  color-scheme: light; /* Enforce light mode */
+  color-scheme: light;
+  /* Enforce light mode */
   color: var(--text-color);
   background-color: var(--background-color);
 
@@ -24,8 +28,10 @@ a {
   color: var(--primary-color);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #DAA520; /* GoldenRod - slightly lighter accent on hover */
+  color: #DAA520;
+  /* GoldenRod - slightly lighter accent on hover */
 }
 
 body {
@@ -47,16 +53,40 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--primary-color);
-  color: #FFFFFF; /* White text for buttons */
+  color: #FFFFFF;
+  /* White text for buttons */
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #DAA520; /* GoldenRod */
+  border-color: #DAA520;
+  /* GoldenRod */
   background-color: #DAA520;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  border: 3px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #DAA520;
+  /* GoldenRod */
+}

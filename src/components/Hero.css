@@ -131,6 +131,8 @@
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem;
+    padding-top: 8rem;
+    /* Add space for fixed header */
     min-height: auto;
   }
 

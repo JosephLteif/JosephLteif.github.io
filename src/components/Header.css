@@ -1,25 +1,45 @@
 .header {
-  background-color: transparent;
-  padding: 1rem 2rem;
-  box-shadow: none;
-  position: sticky;
-  top: 0;
+  background-color: #B8860B;
+  /* Dark Charcoal (Dynamic Island style) */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.8rem 2.5rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+  /* Deep shadow */
+  position: fixed;
+  /* Fixed position as requested */
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  /* Float from top */
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+
+  /* Floating Pill Shape */
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 320px;
+  max-width: 90%;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Subtle gloss */
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect width */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .site-title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: #FDF5E6;
+  /* Light Beige for contrast on dark header */
   text-decoration: none;
   z-index: 1001;
 }
@@ -44,6 +64,30 @@
   border: 0;
 }
 
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1400;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-backdrop.open {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-close {
+  display: none;
+}
+
 .nav-links {
   list-style: none;
   margin: 0;
@@ -56,7 +100,8 @@
 }
 
 .nav-links a {
-  color: var(--text-color);
+  color: #FDF5E6;
+  /* Light Beige for contrast */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -68,27 +113,54 @@
 
 /* Mobile Styling */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+    /* Hide the static nav on mobile */
+  }
+
+  .header {
+    top: 1rem;
+    /* Slightly smaller top margin for mobile */
+    margin: 0 auto;
+    width: 90%;
+    /* Floating island width */
+    max-width: 90%;
+    border-radius: 50px;
+    /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #B8860B;
+    /* Match desktop background */
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+    padding: 0.8rem 1.5rem;
+    /* Adjusted padding */
+  }
+
+  /* Update Logo Color for Contrast on Dark Island Background */
+  .header .site-title {
+    color: #FDF5E6;
+    /* Light Beige */
+  }
+
   .mobile-nav-toggle {
     display: block;
-    position: absolute;
-    top: 2rem;
-    /* Aligned with site-title */
-    right: 2rem;
-    z-index: 2000;
-    width: 2rem;
-    height: 2rem;
     background: transparent;
     border: 0;
     padding: 0;
     cursor: pointer;
+    margin-left: auto;
+    /* Push to right in flex container */
+    pointer-events: auto;
   }
 
   .hamburger {
     display: block;
     position: relative;
-    width: 100%;
+    width: 30px;
+    /* Explicit width */
     height: 3px;
-    background: var(--text-color);
+    background: #FDF5E6;
+    /* Light color for contrast against header */
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
   }
@@ -97,9 +169,12 @@
   .hamburger::after {
     content: '';
     position: absolute;
+    content: '';
+    position: absolute;
     width: 100%;
     height: 3px;
-    background: var(--text-color);
+    background: #FDF5E6;
+    /* Light color for contrast */
     border-radius: 3px;
     transition: all 0.3s ease-in-out;
     left: 0;
@@ -129,20 +204,46 @@
   .nav-links {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
-    width: 70%;
-    max-width: 300px;
+    left: 0;
+    width: 100%;
+    /* Full Width */
     height: 100vh;
     background: var(--background-color);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     transform: translateX(100%);
+    /* Standard off-screen */
     transition: transform 0.3s ease-in-out;
     z-index: 1500;
+    padding: 0;
+  }
+
+  .mobile-nav-backdrop {
+    display: block;
+    /* Enable backdrop structure but control via opacity */
+  }
+
+  .mobile-nav-close {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: auto;
+    margin: 0;
+  }
+
+  .mobile-nav-close button {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     padding: 0;
   }
 
@@ -156,5 +257,7 @@
 
   .nav-links a {
     font-size: 1.5rem;
+    color: var(--text-color);
+    /* Dark text for light menu background */
   }
 }

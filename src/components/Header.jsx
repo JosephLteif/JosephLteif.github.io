@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './Header.css'; // Will create this file next
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import './Header.css';
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -21,14 +22,39 @@ function Header() {
           <span className="sr-only">Menu</span>
           <div className={`hamburger ${isNavOpen ? 'open' : ''}`}></div>
         </button>
-        <ul id="primary-navigation" className={`nav-links ${isNavOpen ? 'expanded' : ''}`}>
-          <li onClick={() => setIsNavOpen(false)}><a href="#about">About</a></li>
-          <li onClick={() => setIsNavOpen(false)}><a href="#skills">Skills</a></li>
-          <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
-          <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>
-          <li onClick={() => setIsNavOpen(false)}><a href="#volunteering">Volunteering</a></li>
-          <li onClick={() => setIsNavOpen(false)}><a href="#contact">Contact</a></li>
+
+        {isNavOpen && createPortal(
+          <>
+            <div
+              className={`mobile-nav-backdrop open`}
+              onClick={() => setIsNavOpen(false)}
+            ></div>
+
+            <ul id="primary-navigation" className={`nav-links expanded`}>
+              <li className="mobile-nav-close">
+                <button onClick={() => setIsNavOpen(false)} aria-label="Close menu">
+                  &larr; Back
+                </button>
+              </li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#skills">Skills</a></li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#volunteering">Volunteering</a></li>
+              <li onClick={() => setIsNavOpen(false)}><a href="#contact">Contact</a></li>
+            </ul>
+          </>,
+          document.body
+        )}
+
+        {/* Desktop Nav (keep in DOM for desktop, hide on mobile via CSS) */}
+        <ul className="nav-links desktop-only">
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#volunteering">Volunteering</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+
       </nav>
     </header>
   );

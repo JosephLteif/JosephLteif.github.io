@@ -9,27 +9,6 @@
   margin: 0 auto;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  color: var(--text-color);
-  margin-bottom: 2.5rem;
-  position: relative;
-  display: inline-block;
-  font-weight: 700;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: var(--primary-color);
-  border-radius: 2px;
-}
-
 .skills-intro {
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -137,10 +116,6 @@
 @media (max-width: 768px) {
   .skills {
     padding: 4rem 1rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
   }
 
   .skills-grid {

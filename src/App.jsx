@@ -7,7 +7,7 @@ import Experience from './components/Experience';
 import Volunteering from './components/Volunteering';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import WerewolfGame from './components/WerewolfGame';
+import Projects from './components/Projects';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Hero />
         <Skills />
         <Experience />
+        <Projects />
         <Volunteering />
-        <WerewolfGame />
         <Contact />
       </main>
       <Footer />

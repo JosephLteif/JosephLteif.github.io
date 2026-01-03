@@ -25,6 +25,8 @@ function Header() {
           <li onClick={() => setIsNavOpen(false)}><a href="#about">About</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#skills">Skills</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
+          <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>
+          <li onClick={() => setIsNavOpen(false)}><a href="#volunteering">Volunteering</a></li>
           <li onClick={() => setIsNavOpen(false)}><a href="#contact">Contact</a></li>
         </ul>
       </nav>

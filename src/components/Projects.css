@@ -301,6 +301,97 @@
     flex-direction: row-reverse;
 }
 
+/* WoW Simulation Tool Visual Styles */
+.simc-visual {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simc-window {
+    width: 260px;
+    height: 220px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(7, 10, 18, 0.98));
+    border: 1px solid rgba(184, 134, 11, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    padding: 16px;
+    position: relative;
+}
+
+.simc-window::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(184, 134, 11, 0.08);
+    pointer-events: none;
+}
+
+.simc-titlebar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.simc-titlebar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(184, 134, 11, 0.65);
+}
+
+.simc-chart {
+    height: 110px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.simc-bar {
+    flex: 1;
+    border-radius: 8px 8px 2px 2px;
+    background: linear-gradient(180deg, rgba(218, 165, 32, 0.95), rgba(184, 134, 11, 0.35));
+    box-shadow: 0 0 18px rgba(184, 134, 11, 0.15);
+}
+
+.bar-one {
+    height: 38%;
+}
+
+.bar-two {
+    height: 62%;
+}
+
+.bar-three {
+    height: 84%;
+}
+
+.bar-four {
+    height: 56%;
+}
+
+.simc-lines {
+    display: grid;
+    gap: 10px;
+}
+
+.simc-lines span {
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(184, 134, 11, 0.7), rgba(184, 134, 11, 0.12));
+}
+
+.simc-lines span:nth-child(2) {
+    width: 84%;
+}
+
+.simc-lines span:nth-child(3) {
+    width: 68%;
+}
 
 @media (max-width: 968px) {
 
@@ -314,5 +405,10 @@
     .project-features ul {
         text-align: left;
         display: inline-block;
+    }
+
+    .simc-visual {
+        width: 280px;
+        height: 280px;
     }
 }

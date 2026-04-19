@@ -41,6 +41,61 @@ function Projects() {
           </div>
         </div>
 
+        {/* WoW Simulation Tool Project */}
+        <div className="project-card reverse-layout">
+          <div className="project-content">
+            <div className="project-visual">
+              <div className="simc-visual" aria-hidden="true">
+                <div className="simc-window">
+                  <div className="simc-titlebar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="simc-chart">
+                    <span className="simc-bar bar-one"></span>
+                    <span className="simc-bar bar-two"></span>
+                    <span className="simc-bar bar-three"></span>
+                    <span className="simc-bar bar-four"></span>
+                  </div>
+                  <div className="simc-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="project-text">
+              <h3>WoW Simulation Tool</h3>
+              <p className="project-description">
+                A local World of Warcraft simulation tool built to test builds, compare gear, and explore performance outcomes
+                without depending on a live game client. This project focuses on fast iteration, clear combat analysis, and
+                a practical workflow for tuning characters locally.
+              </p>
+
+              <div className="project-features">
+                <h4>Key Features</h4>
+                <ul>
+                  <li><strong>Local Sim Runs:</strong> Run combat scenarios on your machine for quick feedback.</li>
+                  <li><strong>Build Comparison:</strong> Compare gear, talents, and stat choices across different setups.</li>
+                  <li><strong>Readable Output:</strong> Focused reporting that makes performance differences easy to scan.</li>
+                  <li><strong>Project Source:</strong> Explore the full codebase and project history on GitHub.</li>
+                </ul>
+              </div>
+
+              <a
+                href="https://github.com/JosephLteif/simcraft"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-button"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Invoice Generator Project */}
         <div className="project-card reverse-layout">
           <div className="project-content">

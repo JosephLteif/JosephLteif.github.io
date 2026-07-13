@@ -5,7 +5,7 @@
 .section-title { margin-bottom: 0; }
 .project-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
 .filter-button { padding: 0.65rem 0.9rem; color: var(--text-muted); background: transparent; border: 1px solid var(--border-color); border-radius: 999px; font: inherit; font-size: 0.86rem; font-weight: 750; cursor: pointer; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease; }
-.filter-button:hover, .filter-button:focus-visible, .filter-button.active { color: #fff; background: var(--ink-color); border-color: var(--ink-color); transform: translateY(-1px); }
+.filter-button:hover, .filter-button:focus-visible, .filter-button.active { color: var(--primary-contrast); background: var(--ink-color); border-color: var(--ink-color); transform: translateY(-1px); }
 .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem; }
 .project-card { display: flex; flex-direction: column; min-height: 100%; overflow: hidden; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 1.25rem; box-shadow: var(--shadow-soft); transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 .project-card:hover { transform: translateY(-7px); border-color: rgba(var(--primary-color-rgb), 0.5); box-shadow: 0 24px 60px rgba(39, 52, 62, 0.14), 0 0 0 1px rgba(var(--primary-color-rgb), 0.08); }

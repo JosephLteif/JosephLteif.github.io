@@ -21,19 +21,44 @@ html {
   --surface-color: #fffdf8;
   --surface-tint: #f7edda;
   --ink-color: #27343e;
+  --ink-color-rgb: 39, 52, 62;
   --text-color: #36454f;
   --text-muted: #62707a;
   --primary-color: #986c00;
   --primary-hover: #765000;
+  --primary-contrast: #fff;
   --primary-soft: #f5e8c7;
   --primary-color-rgb: 152, 108, 0;
+  --contact-background: #27343e;
+  --footer-background: #1e2931;
   --border-color: rgba(39, 52, 62, 0.12);
   --border-strong: rgba(39, 52, 62, 0.28);
   --shadow-soft: 0 14px 36px rgba(39, 52, 62, 0.08);
   color-scheme: light;
 }
 
-body { min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden; }
+:root[data-theme='dark'] {
+  --background-color: #0f171c;
+  --surface-color: #17232b;
+  --surface-tint: #132028;
+  --ink-color: #f3eee4;
+  --ink-color-rgb: 243, 238, 228;
+  --text-color: #d8e0e3;
+  --text-muted: #a9b6bc;
+  --primary-color: #e2b635;
+  --primary-hover: #f4d77d;
+  --primary-contrast: #17232b;
+  --primary-soft: rgba(226, 182, 53, 0.16);
+  --primary-color-rgb: 226, 182, 53;
+  --contact-background: #091116;
+  --footer-background: #0b1217;
+  --border-color: rgba(243, 238, 228, 0.14);
+  --border-strong: rgba(243, 238, 228, 0.32);
+  --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.24);
+  color-scheme: dark;
+}
+
+body { min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden; background: var(--background-color); }
 a { color: var(--primary-color); text-decoration: none; }
 a:hover { color: var(--primary-hover); }
 button, input { font: inherit; }

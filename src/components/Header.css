@@ -1,13 +1,16 @@
 .header { position: fixed; top: 1.2rem; left: 50%; z-index: 1000; width: min(calc(100% - 2rem), 1120px); padding: 0.7rem 1rem 0.7rem 1.25rem; background: rgba(39,52,62,0.94); border: 1px solid rgba(226,182,53,0.3); border-radius: 999px; box-shadow: 0 16px 40px rgba(39,52,62,0.2); transform: translateX(-50%); backdrop-filter: blur(16px); }
 .navbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.site-title { color: #f4d77d; font-size: 1.15rem; font-weight: 850; letter-spacing: -0.03em; }
+.site-title { order: 1; color: #f4d77d; font-size: 1.15rem; font-weight: 850; letter-spacing: -0.03em; }
 .site-title:hover, .site-title:focus-visible { color: #fff; }
 .nav-links { display: flex; align-items: center; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
+.desktop-only { order: 2; }
 .nav-links a { display: inline-flex; position: relative; padding: 0.55rem 0.65rem; color: rgba(255,255,255,0.72); font-size: 0.78rem; font-weight: 750; white-space: nowrap; }
 .nav-links a::after { content: ''; position: absolute; right: 0.65rem; bottom: 0.25rem; left: 0.65rem; height: 2px; background: #e2b635; border-radius: 99px; transform: scaleX(0); transform-origin: center; transition: transform 180ms ease; }
 .nav-links a:hover, .nav-links a:focus-visible, .nav-links a.active { color: #fff; }
 .nav-links a.active::after, .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
-.mobile-nav-toggle { display: none; padding: 0.45rem; color: #fff; background: transparent; border: 0; border-radius: 0.5rem; cursor: pointer; }
+.theme-toggle { order: 3; display: inline-grid; place-items: center; width: 2.3rem; height: 2.3rem; padding: 0; color: #f4d77d; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; cursor: pointer; transition: color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.theme-toggle:hover, .theme-toggle:focus-visible { color: #fff; background: rgba(226,182,53,0.2); transform: translateY(-1px); }
+.mobile-nav-toggle { order: 4; display: none; padding: 0.45rem; color: #fff; background: transparent; border: 0; border-radius: 0.5rem; cursor: pointer; }
 .hamburger, .hamburger::before, .hamburger::after { display: block; width: 1.5rem; height: 2px; background: #f4d77d; border-radius: 99px; transition: transform 180ms ease, opacity 180ms ease; }
 .hamburger { position: relative; }
 .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; }

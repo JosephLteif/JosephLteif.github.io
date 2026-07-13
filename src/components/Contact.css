@@ -1,4 +1,4 @@
-.contact { background: var(--ink-color); color: #fff; }
+.contact { background: var(--contact-background); color: #fff; }
 .contact-content { width: min(100%, 980px); display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2rem 4rem; align-items: center; margin: 0 auto; }
 .contact .section-kicker { color: #e2b635; }
 .contact .section-title { max-width: 620px; color: #fff; }

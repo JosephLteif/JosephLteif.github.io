@@ -32,10 +32,15 @@ function Volunteering() {
     ];
 
     return (
-        <section id="volunteering" className="volunteering">
+        <section id="volunteering" className="volunteering section-shell">
             <div className="volunteering-content">
-                <h2 className="section-title">Volunteering & Leadership</h2>
-                <p className="experience-intro">A long-standing commitment to humanitarian service and community impact:</p>
+                <div className="section-heading">
+                    <div>
+                        <p className="section-kicker">Beyond the product</p>
+                        <h2 className="section-title">Leadership with purpose.</h2>
+                    </div>
+                    <p className="section-intro">A long-standing commitment to humanitarian service, community impact, and calm execution under pressure.</p>
+                </div>
 
                 <div className="volunteering-grid">
                     {volunteeringData.map((item) => (

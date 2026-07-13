@@ -1,105 +1,85 @@
-import React from 'react';
 import './Experience.css';
 
+const experiences = [
+  {
+    id: 'murex', company: 'Murex', role: 'Software Engineer', location: 'Lebanon', type: 'Full time · Hybrid', date: 'Jul 2023 – Present',
+    summary: 'Optimizing data-heavy engineering systems while strengthening security and internal tooling.',
+    description: [
+      'Optimized a high-bandwidth coverage system handling TBs of raw data using Spring Batch, reducing processing time by 50%.',
+      'Eliminated 100% of critical and major security risks and reduced minor issues by 80% through automated vulnerability scanning in CI/CD.',
+      'Built internal engineering tools, modernized interfaces, and migrated legacy systems to improve maintainability and performance.',
+      'Collaborated with cross-functional teams to ship features and resolve system bottlenecks.',
+    ],
+    technologies: ['Java', 'Spring Boot', 'Spring Batch', 'Groovy', 'Angular', 'Postgres', 'MongoDB', 'Splunk', 'Git'],
+  },
+  {
+    id: 'rock-solid', company: 'Rock Solid Group', role: 'Software Engineer', location: 'KSA', type: 'Part time · Remote', date: 'Aug 2022 – Jul 2023',
+    summary: 'Built client-facing content and AI tools around media workflows and cloud storage.',
+    description: [
+      'Engineered a custom CMS using DevExpress and ASP.NET Core so clients could independently manage digital assets.',
+      'Developed interfaces for consuming and updating video and image assets through Amazon S3 integration.',
+      'Built a web interface for interacting with large language models and client-specific workflows.',
+    ],
+    technologies: ['.NET Core', 'DevExpress', 'Amazon S3', 'ASP.NET Core', 'LLM API'],
+  },
+  {
+    id: 'codepickles', company: 'Codepickles, SARL', role: 'Software Engineer', location: 'France', type: 'Part time · Remote', date: 'Jun 2021 – Jul 2023',
+    summary: 'Delivered cross-platform products and real-time IoT services from mobile UI to backend orchestration.',
+    description: [
+      'Architected a cross-platform e-commerce and services application with Flutter and .NET Core APIs.',
+      'Implemented MQTT communication, device dashboards, remote commands, and Firebase notifications.',
+      'Integrated Keycloak authentication and created an orchestrator service for organizing separate services.',
+    ],
+    technologies: ['Flutter', '.NET Core', 'MQTT', 'Firebase', 'Keycloak', 'Microcontrollers'],
+  },
+  {
+    id: 'tekwin', company: 'Tekwin Digital', role: 'Full Stack Engineer', location: 'Lebanon', type: 'Full time · Office', date: 'Jun 2021 – Sep 2021',
+    summary: 'Built cross-platform mobile products, APIs, and animated responsive interfaces.',
+    description: [
+      'Developed a Flutter application for managing buildings and neighborhoods.',
+      'Designed and deployed APIs with STRAPI as a proof of concept.',
+      'Created responsive web designs and animated UI components with Bootstrap while maintaining performance.',
+    ],
+    technologies: ['Flutter', 'STRAPI', 'Bootstrap', 'Web Design', 'Google Maps API'],
+  },
+];
+
 function Experience() {
-  const experiences = [
-    {
-      id: 1,
-      company: "Murex",
-      role: "Software Engineer",
-      location: "Lebanon",
-      type: "Full time - Hybrid",
-      date: "Jul 2023 - Present",
-      description: [
-        "Optimized a high-bandwidth coverage system handling TBs of raw data using Spring Batch. Reduced processing time by 50%, enabling real-time visualization of millions of lines of Java/C++ code.",
-        "Eliminated 100% of critical/major security risks and reduced minor issues by 80% by integrating automated vulnerability scanning into the CI/CD pipeline.",
-        "Built and enhanced internal engineering tools to streamline product life cycle management.",
-        "Redesigned and modernized system interfaces, ensuring adherence to the latest design principles and best practices.",
-        "Migrated legacy systems to modern architectures, improving maintainability and performance.",
-        "Collaborated with cross-functional teams to ensure seamless feature deployment and address system bottlenecks."
-      ],
-      technologies: ["Java", "Spring Boot", "Spring Batch", "Groovy", "Angular", "Sybase", "Postgres", "MongoDB", "Splunk", "Git", "Axon Framework"],
-    },
-    {
-      id: 2,
-      company: "Rock Solid Group",
-      role: "Software Engineer",
-      location: "KSA",
-      type: "Part time - Remotely",
-      date: "Aug 2022 - Jul 2023",
-      description: [
-        "Engineered a custom CMS using DevExpress (ASP.NET Core), enabling clients to independently manage digital assets.",
-        "Developed web interfaces for seamless consumption and updating of video/image assets via Amazon S3 integration for construction site monitoring.",
-        "Developed a web interface to interact with Large Language Models with custom functionalities tailored to client needs."
-      ],
-      technologies: [".NET Core", "DevExpress", "Amazon S3", "ASP.NET Core", "LLM API"],
-    },
-    {
-      id: 3,
-      company: "Codepickles, SARL",
-      role: "Software Engineer",
-      location: "France",
-      type: "Part time - Remotely",
-      date: "Jun 2021 - Jul 2023",
-      description: [
-        "Architected cross-platform e-commerce and services providing mobile application using Flutter. Built backend web APIs with .NET Core.",
-        "Implemented MQTT brokers for real-time app communication with IOT devices.",
-        "Built Dashboards to monitor devices performance and dispatch commands remotely.",
-        "Integrated Firebase push notifications for real-time updates and Keycloak authentication for secure app functionality.",
-        "Created an Orchestrator service to allow organizing and orchestrating separate services."
-      ],
-      technologies: ["Flutter", ".NET Core", "MQTT", "Firebase", "Keycloak", "ASP.NET Core", "Microcontrollers"],
-    },
-    {
-      id: 4,
-      company: "Tekwin Digital",
-      role: "Full Stack Engineer",
-      location: "Lebanon",
-      type: "Full time - Office",
-      date: "Jun 2021 - Sep 2021",
-      description: [
-        "Developed a cross-platform mobile application using Flutter designed at managing buildings and neighborhoods.",
-        "Designed and deployed APIs using STRAPI tool as proof of concept of the validity of the tool.",
-        "Created educational responsive web designs and UI components using Bootstrap.",
-        "Animated a big amount of UI elements to enhance user experience while maintaining performance."
-      ],
-      technologies: ["Flutter", "STRAPI", "Bootstrap", "Web Design", "Google Maps API"],
-    }
-  ];
-
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="experience section-shell">
       <div className="experience-content">
-        <h2 className="section-title">Professional Experience</h2>
-        <p className="experience-intro">A timeline of my professional journey covering 2.5+ years of post-graduate experience:</p>
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">How I work</p>
+            <h2 className="section-title">Experience that compounds.</h2>
+          </div>
+          <p className="section-intro">A progression from product delivery to systems thinking, security, and reliable execution.</p>
+        </div>
         <div className="timeline-container">
-          {experiences.map((exp, index) => (
-            <div key={exp.id} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+          {experiences.map((experience, index) => (
+            <details key={experience.id} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`} open={index === 0}>
+              <summary className="timeline-summary">
+                <span className="timeline-marker" aria-hidden="true"></span>
+                <span className="experience-header">
+                  <span className="experience-main-info">
+                    <span className="experience-date">{experience.date}</span>
+                    <span className="experience-company">{experience.company}</span>
+                    <span className="experience-role">{experience.role}</span>
+                  </span>
+                  <span className="experience-meta">{experience.location} · {experience.type}</span>
+                </span>
+                <span className="experience-summary">{experience.summary}</span>
+                <span className="expand-label"><span className="expand-open">Expand</span><span className="expand-close">Collapse</span></span>
+              </summary>
               <div className="timeline-content">
-                <div className="experience-header">
-                  <div className="experience-main-info">
-                    <h3>{exp.company}</h3>
-                    <h4 className="experience-role">{exp.role}</h4>
-                  </div>
-                  <div className="experience-meta">
-                    <span className="experience-date">{exp.date}</span>
-                    <span className="experience-location">{exp.location} ({exp.type})</span>
-                  </div>
-                </div>
-
                 <ul className="experience-description-list">
-                  {exp.description.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
+                  {experience.description.map((item) => <li key={item}>{item}</li>)}
                 </ul>
-
-                <div className="experience-tech">
-                  {exp.technologies.map(tech => (
-                    <span key={tech} className="tech-pill">{tech}</span>
-                  ))}
+                <div className="experience-tech" aria-label={`${experience.company} technologies`}>
+                  {experience.technologies.map((technology) => <span key={technology} className="tech-pill">{technology}</span>)}
                 </div>
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </div>

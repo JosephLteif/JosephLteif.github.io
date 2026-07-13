@@ -1,60 +1,118 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './Header.css';
 
+const navItems = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'volunteering', label: 'Volunteering' },
+  { id: 'contact', label: 'Contact' },
+  { id: 'terminal', label: 'Dev Corner' },
+];
+
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
+  const menuButtonRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const wasNavOpenRef = useRef(false);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
+  useEffect(() => {
+    const sections = ['hero', ...navItems.map(({ id }) => id)]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) setActiveSection(visibleSection.target.id);
+      },
+      { rootMargin: '-30% 0px -55% 0px', threshold: [0.1, 0.35, 0.7] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isNavOpen) {
+      document.body.style.overflow = '';
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    mobileMenuRef.current?.querySelector('a')?.focus();
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsNavOpen(false);
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isNavOpen]);
+
+  useEffect(() => {
+    if (wasNavOpenRef.current && !isNavOpen) menuButtonRef.current?.focus();
+    wasNavOpenRef.current = isNavOpen;
+  }, [isNavOpen]);
+
+  const closeNav = () => setIsNavOpen(false);
 
   return (
     <header className="header">
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Primary navigation">
         <a href="#hero" className="site-title">Joseph Lteif</a>
+
         <button
+          ref={menuButtonRef}
+          type="button"
           className="mobile-nav-toggle"
           aria-controls="primary-navigation"
           aria-expanded={isNavOpen}
-          onClick={toggleNav}
+          aria-label={isNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          onClick={() => setIsNavOpen((isOpen) => !isOpen)}
         >
-          <span className="sr-only">Menu</span>
-          <div className={`hamburger ${isNavOpen ? 'open' : ''}`}></div>
+          <div className={`hamburger ${isNavOpen ? 'open' : ''}`} aria-hidden="true"></div>
         </button>
 
         {isNavOpen && createPortal(
           <>
-            <div
-              className={`mobile-nav-backdrop open`}
-              onClick={() => setIsNavOpen(false)}
-            ></div>
-
-            <ul id="primary-navigation" className={`nav-links expanded`}>
+            <div className="mobile-nav-backdrop open" onClick={closeNav} aria-hidden="true"></div>
+            <ul id="primary-navigation" ref={mobileMenuRef} className="nav-links mobile-nav expanded">
               <li className="mobile-nav-close">
-                <button onClick={() => setIsNavOpen(false)} aria-label="Close menu">
-                  &larr; Back
+                <button type="button" onClick={closeNav} aria-label="Close menu">
+                  <span aria-hidden="true">&larr;</span> Back
                 </button>
               </li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#skills">Skills</a></li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#experience">Experience</a></li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#projects">Projects</a></li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#volunteering">Volunteering</a></li>
-              <li onClick={() => setIsNavOpen(false)}><a href="#terminal">Terminal</a></li>
+              {navItems.map(({ id, label }) => (
+                <li key={id}>
+                  <a href={`#${id}`} className={activeSection === id ? 'active' : ''} onClick={closeNav}>
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </>,
-          document.body
+          document.body,
         )}
 
-        {/* Desktop Nav (keep in DOM for desktop, hide on mobile via CSS) */}
         <ul className="nav-links desktop-only">
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#volunteering">Volunteering</a></li>
-          <li><a href="#terminal">Terminal</a></li>
+          {navItems.map(({ id, label }) => (
+            <li key={id}>
+              <a href={`#${id}`} className={activeSection === id ? 'active' : ''}>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
-
       </nav>
     </header>
   );

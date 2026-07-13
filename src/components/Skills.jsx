@@ -1,68 +1,62 @@
-import React from 'react';
-import { Code, Layers, Wrench, User } from 'lucide-react';
-import './Skills.css'; // Will create this file next
+import { Code2, Layers3, ShieldCheck, Wrench } from 'lucide-react';
+import './Skills.css';
 
-const technicalSkills = [
+const capabilities = [
   {
-    category: "Languages",
-    icon: <Code size={24} />,
-    skills: ["Java", "C++", "C#", "Dart", "SQL", "HTML/CSS", "Ant", "Groovy", "Typescript", "Javascript", ".NET Core"]
+    title: 'Product interfaces',
+    icon: <Code2 size={21} aria-hidden="true" />,
+    description: 'Clear, responsive experiences that make complex workflows feel approachable.',
+    skills: ['React', 'Angular', 'Flutter', 'TypeScript', 'HTML/CSS'],
+    link: 'projects',
   },
   {
-    category: "Frameworks",
-    icon: <Layers size={24} />,
-    skills: ["ASP.NET", "Flutter", "Bootstrap", "STRAPI", "AXON Framework", "Angular", "Spring Boot"]
+    title: 'Backend systems',
+    icon: <Layers3 size={21} aria-hidden="true" />,
+    description: 'Reliable APIs, data workflows, and integrations built for real operational constraints.',
+    skills: ['Java', 'Spring Boot', '.NET Core', 'SQL', 'MQTT'],
+    link: 'experience',
   },
   {
-    category: "DevOps & Tools",
-    icon: <Wrench size={24} />,
-    skills: ["Docker", "Amazon S3", "MQTT", "Firebase", "Keycloak", "Jenkins", "Splunk", "Sybase", "MongoDB", "Postgres", "Perforce", "SVN", "Git"]
-  }
-];
-
-const softSkills = [
-  "Problem Solving",
-  "Security First",
-  "Adaptability",
-  "Collaboration",
-  "Time Management",
-  "Autonomy",
-  "Communication"
+    title: 'Security & delivery',
+    icon: <ShieldCheck size={21} aria-hidden="true" />,
+    description: 'Engineering practices that improve confidence from local development to deployment.',
+    skills: ['Docker', 'Jenkins', 'Git', 'Keycloak', 'Splunk'],
+    link: 'experience',
+  },
+  {
+    title: 'Tools & data',
+    icon: <Wrench size={21} aria-hidden="true" />,
+    description: 'The practical toolkit behind storage, observability, automation, and iteration.',
+    skills: ['Postgres', 'MongoDB', 'Firebase', 'Amazon S3', 'Sybase'],
+    link: 'projects',
+  },
 ];
 
 function Skills() {
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="skills section-shell">
       <div className="skills-content">
-        <h2 className="section-title">My Toolkit & Superpowers</h2>
-        <p className="skills-intro">Here's a glimpse into the technologies I wield and the qualities that help me bring projects to life:</p>
-
-        <div className="skills-grid">
-          {technicalSkills.map((category, index) => (
-            <div key={index} className="skill-category">
-              <div className="category-header">
-                <span className="category-icon">{category.icon}</span>
-                <h3>{category.category}</h3>
-              </div>
-              <div className="skills-list">
-                {category.skills.map((skill, idx) => (
-                  <span key={idx} className="skill-chip">{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          <div className="skill-category soft-skills">
-            <div className="category-header">
-              <span className="category-icon"><User size={24} /></span>
-              <h3>Soft Skills</h3>
-            </div>
-            <div className="skills-list">
-              {softSkills.map((skill, idx) => (
-                <span key={idx} className="skill-chip soft-skill-chip">{skill}</span>
-              ))}
-            </div>
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Capabilities</p>
+            <h2 className="section-title">The toolkit behind the work.</h2>
           </div>
+          <p className="section-intro">I care less about collecting technologies and more about using the right ones to make a product dependable and useful.</p>
+        </div>
+        <div className="skills-grid">
+          {capabilities.map(({ title, icon, description, skills, link }) => (
+            <article key={title} className="skill-category">
+              <div className="category-header">
+                <span className="category-icon">{icon}</span>
+                <h3>{title}</h3>
+              </div>
+              <p className="skill-description">{description}</p>
+              <div className="skills-list" aria-label={`${title} technologies`}>
+                {skills.map((skill) => <span key={skill} className="skill-chip">{skill}</span>)}
+              </div>
+              <a href={`#${link}`} className="skill-link">See it in context <span aria-hidden="true">↗</span></a>
+            </article>
+          ))}
         </div>
       </div>
     </section>

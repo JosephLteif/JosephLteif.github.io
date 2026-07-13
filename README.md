@@ -37,16 +37,13 @@ Check out the live version here: [https://JosephLteif.github.io](https://JosephL
 
 ## 🚢 Deployment
 
-This project is configured to deploy to **GitHub Pages** using the `gh-pages` package.
+This project deploys to **GitHub Pages** through GitHub Actions.
 
 ### Automatic Deployment (Recommended)
-Simply run:
-```bash
-npm run deploy
-```
-This command will:
-1. Run `predeploy` (which triggers `npm run build`) to create an optimized production bundle in the `dist/` folder.
-2. Push the contents of the `dist/` folder to the `gh-pages` branch on GitHub.
+Every push to `main` builds and deploys the portfolio automatically.
+
+### Manual Deployment
+Open the **Deploy portfolio to GitHub Pages** workflow in GitHub Actions, select **Run workflow**, and choose either `main` or `dev` as the source branch.
 
 ### Manual Build
 If you just want to build the project without deploying:

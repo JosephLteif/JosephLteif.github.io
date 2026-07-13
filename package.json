@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
+    "test": "node --test scripts/*.test.mjs",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",

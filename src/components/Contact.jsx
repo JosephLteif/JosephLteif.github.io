@@ -1,36 +1,43 @@
-import React from 'react';
-import './Contact.css'; // Will create this file next
+import { Check, Copy, Github, Linkedin, Mail, Send } from 'lucide-react';
+import { useState } from 'react';
+import './Contact.css';
+
+const email = 'josephlteif@outlook.com';
 
 function Contact() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setIsCopied(true);
+      window.setTimeout(() => setIsCopied(false), 2200);
+    } catch {
+      window.location.href = `mailto:${email}`;
+    }
+  };
+
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact section-shell">
       <div className="contact-content">
-        <h2 className="section-title">Let's Connect!</h2>
-        <p className="contact-intro">
-          I'm always open to new opportunities, exciting collaborations, or just a friendly chat about tech! Whether you have a project idea, a question, or simply want to say hi, feel free to reach out. I'd love to hear from you!
-        </p>
-        <div className="contact-details">
-          <p><strong>Email:</strong> <a href="mailto:josephlteif@outlook.com">josephlteif@outlook.com</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/joseph-lteif/" target="_blank" rel="noopener noreferrer">Joseph Lteif</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/JosephLteif" target="_blank" rel="noopener noreferrer">JosephLteif</a></p>
+        <div className="contact-copy">
+          <p className="section-kicker">Let’s build something useful</p>
+          <h2 className="section-title">Have a problem worth solving?</h2>
+          <p className="contact-intro">I’m open to thoughtful opportunities, collaborations, and conversations about products that make a real difference.</p>
         </div>
-        {/*
-        <form className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" className="button primary">Send Message</button>
-        </form>
-        */}
+        <div className="contact-actions">
+          <a href={`mailto:${email}`} className="button primary"><Send size={17} aria-hidden="true" /> Start a conversation</a>
+          <button type="button" className="copy-email-button" onClick={copyEmail} aria-describedby="copy-email-status">
+            {isCopied ? <Check size={17} aria-hidden="true" /> : <Copy size={17} aria-hidden="true" />}
+            {isCopied ? 'Email copied' : 'Copy email'}
+          </button>
+          <span id="copy-email-status" className="copy-email-status" aria-live="polite">{isCopied ? email : ''}</span>
+        </div>
+        <div className="contact-links">
+          <a href={`mailto:${email}`}><Mail size={17} aria-hidden="true" /> {email}</a>
+          <a href="https://www.linkedin.com/in/joseph-lteif/" target="_blank" rel="noopener noreferrer"><Linkedin size={17} aria-hidden="true" /> LinkedIn</a>
+          <a href="https://github.com/JosephLteif" target="_blank" rel="noopener noreferrer"><Github size={17} aria-hidden="true" /> GitHub</a>
+        </div>
       </div>
     </section>
   );

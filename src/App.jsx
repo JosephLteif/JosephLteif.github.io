@@ -8,6 +8,7 @@ import Volunteering from './components/Volunteering';
 import Terminal from './components/Terminal';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Skills />
-        <Experience />
         <Projects />
+        <Experience />
+        <Skills />
         <Volunteering />
+        <Contact />
         <Terminal />
       </main>
       <Footer />

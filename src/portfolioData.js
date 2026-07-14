@@ -17,6 +17,7 @@ export const projectCatalog = [
     href: 'https://nightfall-game-prod.web.app/',
     cta: 'Play Nightfall',
     visual: 'moon',
+    media: { src: '/project-logos/nightfall.png', alt: 'Nightfall wolf and moon logo' },
     featured: true,
   },
   {
@@ -35,6 +36,7 @@ export const projectCatalog = [
     href: 'https://github.com/JosephLteif/simcraft',
     cta: 'View on GitHub',
     visual: 'simc',
+    media: { src: '/project-logos/why-low-dps.png', alt: 'WhyLowDPS app logo' },
     featured: true,
   },
   {
@@ -53,6 +55,7 @@ export const projectCatalog = [
     href: 'https://github.com/JosephLteif/Invoice-generator',
     cta: 'View on GitHub',
     visual: 'invoice',
+    media: { src: '/project-logos/invoice.svg', alt: 'Invoice Generator logo' },
   },
   {
     id: 'fitness',
@@ -70,6 +73,7 @@ export const projectCatalog = [
     href: 'https://fitness-progress-app-v1.web.app/',
     cta: 'View Demo',
     visual: 'fitness',
+    media: { src: '/project-logos/fitness.svg', alt: 'Fitness Progress app icon' },
   },
 ];
 

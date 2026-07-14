@@ -3,50 +3,10 @@ import { ArrowUpRight, ChevronDown, ExternalLink } from 'lucide-react';
 import { filterProjects, PROJECT_FILTERS, projectCatalog } from '../portfolioData';
 import './Projects.css';
 
-function ProjectVisual({ visual }) {
-  if (visual === 'moon') {
-    return (
-      <div className="project-visual-art moon-visual" aria-hidden="true">
-        <div className="moon"></div>
-        <div className="wolf-silhouette"></div>
-        <span className="visual-label">PLAY / CONNECT / DEDUCE</span>
-      </div>
-    );
-  }
-
-  if (visual === 'simc') {
-    return (
-      <div className="project-visual-art simc-visual" aria-hidden="true">
-        <div className="simc-window">
-          <div className="simc-titlebar"><span></span><span></span><span></span><small>simulation.run</small></div>
-          <div className="simc-chart">
-            <span className="simc-bar bar-one"></span><span className="simc-bar bar-two"></span>
-            <span className="simc-bar bar-three"></span><span className="simc-bar bar-four"></span>
-          </div>
-          <div className="simc-lines"><span></span><span></span><span></span></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (visual === 'invoice') {
-    return (
-      <div className="project-visual-art invoice-visual" aria-hidden="true">
-        <div className="invoice-paper">
-          <div className="invoice-header"></div>
-          <div className="invoice-lines"></div>
-          <div className="invoice-stamp">PDF</div>
-        </div>
-      </div>
-    );
-  }
-
+function ProjectVisual({ project }) {
   return (
-    <div className="project-visual-art fitness-visual" aria-hidden="true">
-      <div className="skill-tree-node root-node">+</div>
-      <div className="skill-connector left"></div><div className="skill-connector right"></div>
-      <div className="skill-tree-node child-left">+</div><div className="skill-tree-node child-right">+</div>
-      <span className="fitness-label">LEVEL UP</span>
+    <div className="project-visual-art project-logo-visual">
+      <img className="project-logo" src={project.media.src} alt={project.media.alt} />
     </div>
   );
 }
@@ -87,7 +47,7 @@ function Projects() {
           {visibleProjects.map((project) => (
             <article key={project.id} className={`project-card ${project.featured ? 'featured' : ''}`}>
               <div className={`project-visual ${project.visual}-visual-wrap`}>
-                <ProjectVisual visual={project.visual} />
+                <ProjectVisual project={project} />
               </div>
               <div className="project-card-content">
                 <div className="project-card-topline">

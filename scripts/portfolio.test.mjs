@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { filterProjects, resolveTerminalCommand } from '../src/portfolioData.js';
+import { filterProjects, projectCatalog, resolveTerminalCommand } from '../src/portfolioData.js';
 import { getInitialTheme, getStoredTheme } from '../src/theme.js';
 
 test('filterProjects returns only projects matching the selected category', () => {
@@ -11,6 +11,18 @@ test('filterProjects returns only projects matching the selected category', () =
 
   assert.deepEqual(filterProjects(projects, 'Desktop').map(({ id }) => id), ['simcraft']);
   assert.deepEqual(filterProjects(projects, 'All').map(({ id }) => id), ['nightfall', 'simcraft']);
+});
+
+test('project cards use the real product media assets', () => {
+  assert.deepEqual(
+    projectCatalog.map(({ id, media }) => [id, media?.src, media?.alt]),
+    [
+      ['nightfall', '/project-logos/nightfall.png', 'Nightfall wolf and moon logo'],
+      ['simcraft', '/project-logos/why-low-dps.png', 'WhyLowDPS app logo'],
+      ['invoice', '/project-logos/invoice.svg', 'Invoice Generator logo'],
+      ['fitness', '/project-logos/fitness.svg', 'Fitness Progress app icon'],
+    ],
+  );
 });
 
 test('resolveTerminalCommand describes navigation commands', () => {

@@ -1,4 +1,4 @@
-import { Check, Copy, Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Check, Copy, Github, Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { useState } from 'react';
 import './Contact.css';
 
@@ -37,6 +37,7 @@ function Contact() {
           <a href={`mailto:${email}`}><Mail size={17} aria-hidden="true" /> {email}</a>
           <a href="https://www.linkedin.com/in/joseph-lteif/" target="_blank" rel="noopener noreferrer"><Linkedin size={17} aria-hidden="true" /> LinkedIn</a>
           <a href="https://github.com/JosephLteif" target="_blank" rel="noopener noreferrer"><Github size={17} aria-hidden="true" /> GitHub</a>
+          <a href="https://www.instagram.com/josephlteif/" target="_blank" rel="noopener noreferrer"><Instagram size={17} aria-hidden="true" /> Instagram</a>
         </div>
       </div>
     </section>

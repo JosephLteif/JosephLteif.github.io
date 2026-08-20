@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { filterProjects, projectCatalog, resolveTerminalCommand } from '../src/portfolioData.js';
+import { builderModes, filterProjects, projectCatalog, resolveTerminalCommand, terminalCommandNames } from '../src/portfolioData.js';
 import { getInitialTheme, getStoredTheme } from '../src/theme.js';
 
 test('filterProjects returns only projects matching the selected category', () => {
@@ -11,6 +11,14 @@ test('filterProjects returns only projects matching the selected category', () =
 
   assert.deepEqual(filterProjects(projects, 'Desktop').map(({ id }) => id), ['simcraft']);
   assert.deepEqual(filterProjects(projects, 'All').map(({ id }) => id), ['nightfall', 'simcraft']);
+  assert.deepEqual(filterProjects(projects, 'Games').map(({ id }) => id), ['nightfall']);
+});
+
+test('builder modes point to real projects and project case studies have all views', () => {
+  const projectIds = new Set(projectCatalog.map(({ id }) => id));
+
+  assert.ok(builderModes.every(({ projectId }) => projectIds.has(projectId)));
+  assert.ok(projectCatalog.every(({ story }) => story.challenge && story.build && story.outcome));
 });
 
 test('project cards use the real product media assets', () => {
@@ -38,6 +46,14 @@ test('resolveTerminalCommand reports unknown commands without a target', () => {
     type: 'error',
     text: ["Command not found: deploy", "Type 'help' for available commands."],
   });
+});
+
+test('terminal exposes the personality commands used by the interactive shortcuts', () => {
+  assert.ok(terminalCommandNames.includes('whoami'));
+  assert.deepEqual(resolveTerminalCommand('surprise').text, [
+    'You found the side quest.',
+    'Try the theme toggle, then visit Nightfall when you want a little suspense.',
+  ]);
 });
 
 test('getStoredTheme only accepts saved light or dark preferences', () => {

@@ -16,6 +16,7 @@
 .terminal-quick-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
 .terminal-quick-actions button { padding: 0.5rem 0.7rem; color: var(--text-muted); background: transparent; border: 1px solid var(--border-color); border-radius: 999px; font: 0.78rem 'Courier New', monospace; cursor: pointer; }
 .terminal-quick-actions button:hover, .terminal-quick-actions button:focus-visible { color: var(--primary-color); border-color: var(--primary-color); }
+.terminal-hint { margin: 0.75rem 0 0; color: var(--text-muted); font: 0.72rem 'Courier New', monospace; }
 
 @media (max-width: 640px) {
   .terminal-heading { display: block; }

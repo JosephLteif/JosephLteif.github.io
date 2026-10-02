@@ -73,7 +73,7 @@
 .moon-visual-wrap .project-visual { background: radial-gradient(circle at 50% 40%, rgba(129, 104, 255, 0.32), transparent 30%), linear-gradient(135deg, #111d38, #090f1d); }
 .simc-visual-wrap .project-visual { background: radial-gradient(circle at 50% 40%, rgba(214, 159, 32, 0.18), transparent 34%), linear-gradient(135deg, #171718, #241d12); }
 .invoice-visual-wrap .project-visual { background: linear-gradient(135deg, #dbeafe, #f8fafc); }
-.fitness-visual-wrap .project-visual { background: radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.2), transparent 34%), linear-gradient(135deg, #111827, #1f2937); }
+.ledger-visual-wrap .project-visual { background: linear-gradient(135deg, #f1eddf, #dce4dd); }
 
 @media (max-width: 760px) {
   .section-heading { display: block; }

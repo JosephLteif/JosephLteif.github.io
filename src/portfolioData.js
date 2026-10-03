@@ -101,7 +101,7 @@ export const projectCatalog = [
     title: 'Pocket Ledger',
     eyebrow: 'iOS finance app · In development',
     categories: ['Mobile'],
-    description: 'A local-first personal finance ledger for iPhone and Apple Watch, bringing accounts, transactions, budgets, receipts, and reports together without bank connections.',
+    description: 'A local-first iPhone and Apple Watch ledger with USD and LBP in the same transaction.',
     impact: 'Gives people a clear record of their money while keeping ledger data on their own devices.',
     technologies: ['SwiftUI', 'WidgetKit', 'Apple Watch'],
     story: {

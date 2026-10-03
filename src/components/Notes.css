@@ -1,0 +1,28 @@
+.notes-content { width: 100%; }
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: note;
+}
+.notes-list li {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--ink-color);
+  font-size: 1rem;
+}
+.notes-list li::before {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  counter-increment: note;
+  content: '0' counter(note);
+}
+
+@media (max-width: 680px) {
+  .notes-list { grid-template-columns: 1fr; gap: 0.8rem; }
+}

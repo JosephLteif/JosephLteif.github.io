@@ -1,76 +1,78 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 5rem;
   width: 100%;
   margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--ink-color);
-  background: var(--background-color);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --background-color: #fdf5e6;
-  --surface-color: #fffdf8;
-  --surface-tint: #f7edda;
-  --ink-color: #27343e;
-  --ink-color-rgb: 39, 52, 62;
-  --text-color: #36454f;
-  --text-muted: #62707a;
-  --primary-color: #986c00;
-  --primary-hover: #765000;
+  color: var(--ink-color);
+  background: var(--background-color);
+  --background-color: #f8f9f9;
+  --surface-color: #fff;
+  --surface-tint: #edf2f5;
+  --ink-color: #23364b;
+  --text-color: #394e63;
+  --text-muted: #5d6f80;
+  --primary-color: #416b8b;
+  --primary-hover: #2f5675;
   --primary-contrast: #fff;
-  --primary-soft: #f5e8c7;
-  --primary-color-rgb: 152, 108, 0;
-  --contact-background: #27343e;
-  --footer-background: #1e2931;
-  --border-color: rgba(39, 52, 62, 0.12);
-  --border-strong: rgba(39, 52, 62, 0.28);
-  --shadow-soft: 0 14px 36px rgba(39, 52, 62, 0.08);
+  --primary-soft: #e5edf2;
+  --primary-color-rgb: 65, 107, 139;
+  --border-color: rgba(35, 54, 75, 0.16);
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-  --background-color: #0f171c;
-  --surface-color: #17232b;
-  --surface-tint: #132028;
-  --ink-color: #f3eee4;
-  --ink-color-rgb: 243, 238, 228;
-  --text-color: #d8e0e3;
-  --text-muted: #a9b6bc;
-  --primary-color: #e2b635;
-  --primary-hover: #f4d77d;
+  --background-color: #111a21;
+  --surface-color: #18242c;
+  --surface-tint: #1d2b34;
+  --ink-color: #e8edf0;
+  --text-color: #d0dbe1;
+  --text-muted: #adbbc4;
+  --primary-color: #9abbd2;
+  --primary-hover: #c4dce9;
   --primary-contrast: #17232b;
-  --primary-soft: rgba(226, 182, 53, 0.16);
-  --primary-color-rgb: 226, 182, 53;
-  --contact-background: #091116;
-  --footer-background: #0b1217;
-  --border-color: rgba(243, 238, 228, 0.14);
-  --border-strong: rgba(243, 238, 228, 0.32);
-  --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.24);
+  --primary-soft: #243845;
+  --primary-color-rgb: 154, 187, 210;
+  --border-color: rgba(232, 237, 240, 0.18);
   color-scheme: dark;
 }
 
-body { min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden; background: var(--background-color); }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
 a { color: var(--primary-color); text-decoration: none; }
 a:hover { color: var(--primary-hover); }
-button, input { font: inherit; }
-button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible { outline: 3px solid rgba(var(--primary-color-rgb), 0.55); outline-offset: 4px; }
-h1, h2, h3, h4, h5, h6 { margin-top: 0; color: var(--ink-color); }
-p { line-height: 1.6; }
+button { font: inherit; }
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid rgba(var(--primary-color-rgb), 0.65);
+  outline-offset: 4px;
+}
+h1, h2, h3, h4 { margin-top: 0; color: var(--ink-color); }
+p { line-height: 1.65; }
 
-::-webkit-scrollbar { width: 11px; }
-::-webkit-scrollbar-track { background: var(--background-color); }
-::-webkit-scrollbar-thumb { background: var(--primary-color); border: 3px solid var(--background-color); border-radius: 99px; }
+#root { min-height: 100vh; display: flex; flex-direction: column; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

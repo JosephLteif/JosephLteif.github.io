@@ -2,7 +2,7 @@ import { Check, Copy, Github, Instagram, Linkedin, Mail, Send } from 'lucide-rea
 import { useState } from 'react';
 import './Contact.css';
 
-const email = 'josephlteif@outlook.com';
+const email = 'josephmllteif@icloud.com';
 
 function Contact() {
   const [isCopied, setIsCopied] = useState(false);
@@ -21,9 +21,9 @@ function Contact() {
     <section id="contact" className="contact section-shell">
       <div className="contact-content">
         <div className="contact-copy">
-          <p className="section-kicker">Let’s build something useful</p>
-          <h2 className="section-title">Have a problem worth solving?</h2>
-          <p className="contact-intro">I’m open to thoughtful opportunities, collaborations, and conversations about products that make a real difference.</p>
+          <p className="section-kicker">Say hello</p>
+          <h2 className="section-title">Let’s make something useful.</h2>
+          <p className="contact-intro">I’m open to thoughtful opportunities, collaborations, and good problems to talk through.</p>
         </div>
         <div className="contact-actions">
           <a href={`mailto:${email}`} className="button primary"><Send size={17} aria-hidden="true" /> Start a conversation</a>

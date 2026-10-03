@@ -11,7 +11,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/joseph-lteif/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/JosephLteif" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.instagram.com/josephlteif18/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="mailto:josephlteif@outlook.com">Email</a>
+          <a href="mailto:josephmllteif@icloud.com">Email</a>
         </div>
       </div>
     </footer>

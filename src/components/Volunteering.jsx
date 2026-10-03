@@ -9,7 +9,6 @@ function Volunteering() {
             role: "Active Member & Leadership Roles",
             date: "Mar 2018 – Present (8 years)",
             sector: "Humanitarian & Human Rights",
-            summary: "Extensive background in leadership and community involvement through active participation in various committees and crisis response initiatives.",
             details: [
                 {
                     title: "Leadership & Committees",
@@ -36,23 +35,20 @@ function Volunteering() {
             <div className="volunteering-content">
                 <div className="section-heading">
                     <div>
-                        <p className="section-kicker">Beyond the product</p>
-                        <h2 className="section-title">Leadership with purpose.</h2>
+                        <p className="section-kicker">Beyond work</p>
+                        <h2 className="section-title">Lebanese Red Cross</h2>
                     </div>
-                    <p className="section-intro">A long-standing commitment to humanitarian service, community impact, and calm execution under pressure.</p>
+                    <p className="section-intro">Humanitarian service, committee work, and crisis response since March 2018.</p>
                 </div>
 
                 <div className="volunteering-grid">
                     {volunteeringData.map((item) => (
                         <div key={item.id} className="volunteering-card">
                             <div className="volunteering-header">
-                                <h3 className="volunteering-org">{item.organization}</h3>
                                 <div className="volunteering-sector">{item.sector}</div>
                                 <div className="volunteering-role">{item.role}</div>
                                 <div className="volunteering-date">{item.date}</div>
                             </div>
-
-                            <p className="volunteering-summary">{item.summary}</p>
 
                             <ul className="volunteering-details">
                                 {item.details.map((detail, index) => (

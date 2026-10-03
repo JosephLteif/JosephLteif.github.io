@@ -1,16 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Moon, Sun } from 'lucide-react';
+import { Download, Moon, Sun } from 'lucide-react';
 import { getInitialTheme, THEME_STORAGE_KEY } from '../theme';
 import './Header.css';
 
 const navItems = [
-  { id: 'projects', label: 'Projects' },
+  { id: 'projects', label: 'Work' },
   { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'volunteering', label: 'Volunteering' },
+  { id: 'volunteering', label: 'Beyond work' },
+  { id: 'notes', label: 'Notes' },
   { id: 'contact', label: 'Contact' },
-  { id: 'terminal', label: 'Dev Corner' },
 ];
 
 function Header() {
@@ -97,7 +96,10 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar" aria-label="Primary navigation">
-        <a href="#hero" className="site-title">Joseph Lteif</a>
+        <a href="#hero" className="site-title">
+          <img src="/logo.png" alt="" aria-hidden="true" className="site-mark" />
+          Joseph Lteif
+        </a>
 
         <button
           ref={menuButtonRef}
@@ -141,6 +143,10 @@ function Header() {
             </li>
           ))}
         </ul>
+
+        <a href="/Joseph_Lteif_Resume_V27.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">
+          Resume <Download size={14} aria-hidden="true" />
+        </a>
 
         <button
           type="button"

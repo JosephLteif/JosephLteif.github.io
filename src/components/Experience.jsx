@@ -50,10 +50,10 @@ function Experience() {
       <div className="experience-content">
         <div className="section-heading">
           <div>
-            <p className="section-kicker">How I work</p>
-            <h2 className="section-title">Experience that compounds.</h2>
+            <p className="section-kicker">Career</p>
+            <h2 className="section-title">Work with useful results.</h2>
           </div>
-          <p className="section-intro">A progression from product delivery to systems thinking, security, and reliable execution.</p>
+          <p className="section-intro">From cross-platform products to data-heavy systems, here are a few chapters of the work.</p>
         </div>
         <div className="timeline-container">
           {experiences.map((experience, index) => (
@@ -69,7 +69,7 @@ function Experience() {
                   <span className="experience-meta">{experience.location} · {experience.type}</span>
                 </span>
                 <span className="experience-summary">{experience.summary}</span>
-                <span className="expand-label"><span className="expand-open">Expand</span><span className="expand-close">Collapse</span></span>
+                <span className="expand-label"><span className="expand-open">Details</span><span className="expand-close">Hide details</span></span>
               </summary>
               <div className="timeline-content">
                 <ul className="experience-description-list">
